@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-//accessing API routes
-router.get('/', function (req, res) {
-  return res.status(200).json({
-    success: true,
-    message: 'We are on',
-  });
-});
+const employeeController = require('../../../controllers/api/v1/employee_controller');
+
+//handle employee routes
+// creating employee
+router.post('/create', employeeController.create);
+
+//sign in employee
+router.post('/sign-in', employeeController.signIn);
 
 module.exports = router;
