@@ -9,7 +9,7 @@ const studentController = require('../../../controllers/api/v1/student_controlle
 router.get('/', studentController.getStudents);
 
 // creating student
-router.post('/create', studentController.create);
+router.post('/register', studentController.create);
 
 //getting interview detail with student id
 router.get('/:student_id/interviews', studentController.getInterviews);
