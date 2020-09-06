@@ -8,6 +8,6 @@ const employeeController = require('../../../controllers/api/v1/employee_control
 router.post('/create', employeeController.create);
 
 //sign in employee
-router.post('/sign-in', employeeController.signIn);
+router.post('/create-session', employeeController.createSession);
 
 module.exports = router;
