@@ -5,6 +5,13 @@ const jwt = require('jsonwebtoken');
 module.exports.create = async function (request, response) {
   try {
     let requestEmail = request.body.email.toLowerCase();
+    let user = await Employee.findOne({ email: requestEmail });
+    if (user) {
+      return response.status(422).json({
+        success: false,
+        message: 'Employee Already exist with this Email',
+      });
+    }
     if (request.body.password != request.body.confirmPassword) {
       return response.status(422).json({
         success: false,

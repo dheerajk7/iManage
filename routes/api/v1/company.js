@@ -5,7 +5,7 @@ const companyController = require('../../../controllers/api/v1/company_controlle
 
 //handle company routes
 // creating company
-router.post('/create', companyController.create);
+router.post('/register', companyController.create);
 
 // getting all the registered company
 router.get('/', companyController.getCompanies);
